@@ -1,5 +1,14 @@
-/* If you're feeling fancy you can add interactivity 
-    to your site with Javascript */
+/* global
+ *    HSB, background, color, colorMode, createCanvas, ellipse, fill, height,
+ *    noStroke, random, strokeWeight, text, textSize, width
+ */
+let 
 
-// prints "hi" in the browser's dev tools console
-console.log("hi");
+function setup(){
+  createCanvas(850, 700);
+  colorMode(HSB, 100);
+}
+ function draw(){
+   background(0, 0, 95);
+   line(20,20,60,90)
+ }
