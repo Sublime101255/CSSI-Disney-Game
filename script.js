@@ -4,8 +4,7 @@
  *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
  *    UP_ARROW, soundFormats, textSize,textStyle, loadSound, loadFont, textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
  */
-var tih;
-var bih;
+
 var bird;
 var pipes = [];
 let spongebob,song, gameIsOver, mySound, createAudio, fontRegular, house,mickeyMouse, score, sky;
@@ -64,9 +63,7 @@ function draw() {
       pipes.splice(i, 1);
     }
   }
- if (bird.y > tih && bird.y < bih){
-      score++
-    }
+ 
   bird.update();
   bird.show();
 
@@ -134,12 +131,12 @@ function Pipe() {
     }
     // rect(this.x, 0, this.w, this.top);
     // rect(this.x, height - this.bottom, this.w, this.bottom);
-   let tih = image(house,this.x, 0, this.w, this.top);
-  let bih = image(house,this.x, height - this.bottom, this.w, this.bottom);
+   var tih = image(house,this.x, 0, this.w, this.top);
+  var bih = image(house,this.x, height - this.bottom, this.w, this.bottom);
     
-    // if (bird.y > tih && bird.y < bih){
-    //   score++
-    // }
+    if (bird.y > this.top && bird.y < this.bottom && bird.x >= this.x && bird.x <= this.w){
+      score++
+    }
   };
 
   this.update = function() {
