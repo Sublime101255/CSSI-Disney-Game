@@ -71,7 +71,7 @@ function draw() {
       score ++;
     }
   
-  mySound.play();
+  // mySound.play();
 }
 
 
@@ -113,6 +113,7 @@ function Pipe() {
     //THIS IS WHERE YOU CHANGE COLOR IF HIT
     if (this.highlight) {
       displayScore();
+      // mySound.play();
       // bird.y = height-45;
       // bird.lift = 0;
       // bird.gravity = 0;
