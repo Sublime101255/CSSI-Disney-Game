@@ -9,6 +9,9 @@ var bird;
 var pipes = [];
 let spongebob,house,mickeyMouse, sky;
 
+
+//SETUP
+
 function setup() {
   createCanvas(800, 600);
   mickeyMouse = loadImage(
@@ -25,6 +28,9 @@ function setup() {
   bird = new Bird();
   pipes.push(new Pipe());
 }
+
+
+//DRAW
 
 function draw() {
   background(0);
@@ -50,6 +56,9 @@ function draw() {
     pipes.push(new Pipe());
   }
 }
+
+
+//ACTION
 
 function keyPressed() {
   if (key == ' ') {
@@ -115,7 +124,7 @@ function Bird() {
   this.show = function() {
     fill(255);
     // ellipse(this.x, this.y, 32, 32);
-    image(mickeyMouse, this.x, this.y, 45, 45)
+    image(mickeyMouse, this.x, this.y, 60, 60)
   };
 
   this.up = function() {
