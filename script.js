@@ -13,14 +13,14 @@ function preload() {
   // fontRegular = loadFont('assets/waltograph42.otf');
   fontRegular = loadFont("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2Fwaltograph42.otf?v=1595527371109");
     soundFormats('mp3','ogg');
-  mySound = loadSound("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FThere%20s%20a%20Great%20Big%20Beautiful%20Tomorrow%20(From%20The%20Carousel%20of%20Progress).mp3?v=1595531520384");
+  mySound = loadSound("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FThere%20s%20a%20Great%20Big%20Beautiful%20Tomorrow.mp3?v=1595532779031");
   
 }
 
 //SETUP
 
 function setup() {
-let cnv = createCanvas(800, 600);
+let cnv = createCanvas(1500, 600);
   cnv.mousePressed(canvasPressed);
   mickeyMouse = loadImage(
     // "https://1.bp.blogspot.com/_OBIL8PqOcIY/SKWa02IeHKI/AAAAAAAAAO8/H4dHrsdw3D8/s200/Walking.png"
