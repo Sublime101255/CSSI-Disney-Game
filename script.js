@@ -2,12 +2,12 @@
 /* global
  *    HSB, background, color, collideRectRect, colorMode, createCanvas, fill, frameRate, keyCode, height,
  *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
- *    UP_ARROW, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
+ *    UP_ARROW, textSize,textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
  */
 
 var bird;
 var pipes = [];
-let spongebob,house,mickeyMouse, score, sky;
+let spongebob,fontRegulhouse,mickeyMouse, score, sky;
 
 
 //SETUP
@@ -102,11 +102,11 @@ function Pipe() {
     //THIS IS WHERE YOU CHANGE COLOR IF HIT
     if (this.highlight) {
       displayScore();
-      bird.y = height-45;
-      bird.lift = 0;
-      bird.gravity = 0;
-      this.speed = 0;
-      pipes = 2
+      // bird.y = height-45;
+      // bird.lift = 0;
+      // bird.gravity = 0;
+      // this.speed = 0;
+      // pipes = 2
       fill(255, 0, 0);
     }
     // rect(this.x, 0, this.w, this.top);
@@ -173,6 +173,10 @@ function Bird() {
 function displayScore(){
   fill(255,0,0)
   textSize(30);
-  textFont("san-serif")
+  textStyle(ITALIC)
+  textFont(`Georgia`)
   text(`score: ${score}`,20,40)
 }
+
+function preload() {
+  fontRegular = loadFont('assets/Regular.otf');
