@@ -13,7 +13,7 @@ function preload() {
   // fontRegular = loadFont('assets/waltograph42.otf');
   fontRegular = loadFont("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2Fwaltograph42.otf?v=1595527371109");
     soundFormats('mp3','ogg');
-  mySound = loadSound("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FMickey%20Mouse%20-%20Steamboat%20Willie%20-%20Whistle.mp3?v=1595529035632");
+  mySound = loadSound("");
   
 }
 
