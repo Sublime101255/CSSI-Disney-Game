@@ -4,7 +4,8 @@
  *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
  *    UP_ARROW, soundFormats, textSize,textStyle, loadSound, loadFont, textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
  */
-
+var tih;
+var bih;
 var bird;
 var pipes = [];
 let spongebob,song, gameIsOver, mySound, createAudio, fontRegular, house,mickeyMouse, score, sky;
@@ -33,6 +34,7 @@ createCanvas(1500, 600);
   house = loadImage (
   "https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2F5ca394df1cf23004f283682e.png?v=1595534970451"
   );
+ 
   bird = new Bird();
   pipes.push(new Pipe());
   score = 0
@@ -62,7 +64,9 @@ function draw() {
       pipes.splice(i, 1);
     }
   }
-
+ if (bird.y > tih && bird.y < bih){
+      score++
+    }
   bird.update();
   bird.show();
 
@@ -132,6 +136,10 @@ function Pipe() {
     // rect(this.x, height - this.bottom, this.w, this.bottom);
    let tih = image(house,this.x, 0, this.w, this.top);
   let bih = image(house,this.x, height - this.bottom, this.w, this.bottom);
+    
+    // if (bird.y > tih && bird.y < bih){
+    //   score++
+    // }
   };
 
   this.update = function() {
@@ -204,7 +212,7 @@ function displayScore(){
       bird.y = height-45;
       bird.lift = 0;
       bird.gravity = 0;
-      this.speed = 0;
+      pipes.speed = 0;
   }
 }
 
