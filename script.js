@@ -2,18 +2,25 @@
 /* global
  *    HSB, background, color, collideRectRect, colorMode, createCanvas, fill, frameRate, keyCode, height,
  *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
- *    UP_ARROW, textSize,textStyle, loadSound, loadFont, textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
+ *    UP_ARROW, soundFormats, textSize,textStyle, loadSound, loadFont, textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
  */
 
 var bird;
 var pipes = [];
-let spongebob,song, createAudio, fontRegular, house,mickeyMouse, score, sky;
+let spongebob,song, mySound, createAudio, fontRegular, house,mickeyMouse, score, sky;
 
+function preload() {
+  // fontRegular = loadFont('assets/waltograph42.otf');
+  fontRegular = loadFont("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2Fwaltograph42.otf?v=1595527371109");
+    soundFormats('mp3','ogg');
+  mySound = loadSound("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FMickey%20Mouse%20-%20Steamboat%20Willie%20-%20Whistle.mp3?v=1595529035632");
+  
+}
 
 //SETUP
 
 function setup() {
-  createCanvas(800, 600);
+createCanvas(800, 600);
   mickeyMouse = loadImage(
     // "https://1.bp.blogspot.com/_OBIL8PqOcIY/SKWa02IeHKI/AAAAAAAAAO8/H4dHrsdw3D8/s200/Walking.png"
 "https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2F580b57fbd9996e24bc43bd2f.png?v=1595522428738"  
@@ -29,8 +36,8 @@ function setup() {
   pipes.push(new Pipe());
   score = 0
   
-  song = createAudio("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FMickey%20Mouse%20-%20Steamboat%20Willie%20-%20Whistle.mp3?v=1595529035632")
-song.autoplay(true);
+//   song = loadSound("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FMickey%20Mouse%20-%20Steamboat%20Willie%20-%20Whistle.mp3?v=1595529035632")
+// song.autoplay(true);
 }
 
 
@@ -64,6 +71,7 @@ function draw() {
       score ++;
     }
   
+  mySound.play();
 }
 
 
@@ -180,7 +188,7 @@ function displayScore(){
   text(`score: ${score}`,20,40)
 }
 
-function preload() {
-  // fontRegular = loadFont('assets/waltograph42.otf');
-  fontRegular = loadFont("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2Fwaltograph42.otf?v=1595527371109");
-}
+
+// function canvasPressed(){
+//   mySound.play();
+// }
