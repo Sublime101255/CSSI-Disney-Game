@@ -7,7 +7,7 @@
 
 var bird;
 var pipes = [];
-let spongebob,song, mySound, createAudio, fontRegular, house,mickeyMouse, score, sky;
+let spongebob,song, gameIsOver, mySound, createAudio, fontRegular, house,mickeyMouse, score, sky;
 
 function preload() {
   // fontRegular = loadFont('assets/waltograph42.otf');
@@ -36,6 +36,7 @@ createCanvas(1500, 600);
   bird = new Bird();
   pipes.push(new Pipe());
   score = 0
+  gameIsOver = false;
   mySound.play();
 //   song = loadSound("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FMickey%20Mouse%20-%20Steamboat%20Willie%20-%20Whistle.mp3?v=1595529035632")
 // song.autoplay(true);
@@ -113,19 +114,19 @@ function Pipe() {
     fill(255);
     //THIS IS WHERE YOU CHANGE COLOR IF HIT
     if (this.highlight) {
-      displayScore();
+      gameIsOver = true;
       // mySound.play();
-      // bird.y = height-45;
-      // bird.lift = 0;
-      // bird.gravity = 0;
-      // this.speed = 0;
-      // pipes = 4
+      bird.y = height-45;
+      bird.lift = 0;
+      bird.gravity = 0;
+      this.speed = 0;
+      pipes = 4
       fill(255, 0, 0);
     }
     // rect(this.x, 0, this.w, this.top);
     // rect(this.x, height - this.bottom, this.w, this.bottom);
-    image(house,this.x, 0, this.w, this.top);
-    image(house,this.x, height - this.bottom, this.w, this.bottom);
+   let tih = image(house,this.x, 0, this.w, this.top);
+  let bih = image(house,this.x, height - this.bottom, this.w, this.bottom);
   };
 
   this.update = function() {
@@ -188,9 +189,11 @@ function displayScore(){
   textSize(30);
   textFont(fontRegular);
   text(`score: ${score}`,20,40)
+  if (gameIsOver){
+    textSize(70);
+    text ("GAME OVER", width/2, height/2)
+    textSize(60);
+    text(`score: ${score}`, width/2, height/2 + 40)
+  }
 }
 
-
-// function canvasPressed(){
-//   mySound.play();
-// }
