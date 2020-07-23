@@ -2,12 +2,12 @@
 /* global
  *    HSB, background, color, collideRectRect, colorMode, createCanvas, fill, frameRate, keyCode, height,
  *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
- *    UP_ARROW, textSize,textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
+ *    UP_ARROW, textSize,textStyle, loadFont, textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
  */
 
 var bird;
 var pipes = [];
-let spongebob,fontRegulhouse,mickeyMouse, score, sky;
+let spongebob,fontRegular, house,mickeyMouse, score, sky;
 
 
 //SETUP
@@ -171,12 +171,13 @@ function Bird() {
 //SCORE
  
 function displayScore(){
-  fill(255,0,0)
+  fill("yellow")
   textSize(30);
-  textStyle(ITALIC)
-  textFont(`Georgia`)
+  textFont(fontRegular);
   text(`score: ${score}`,20,40)
 }
 
 function preload() {
-  fontRegular = loadFont('assets/Regular.otf');
+  // fontRegular = loadFont('assets/waltograph42.otf');
+  fontRegular = loadFont("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2Fwaltograph42.otf?v=1595527371109");
+}
