@@ -56,7 +56,7 @@ function draw() {
   if (frameCount % 75 == 0) {
     pipes.push(new Pipe());
   }
-   if (bird.y <    = 0){
+   if (bird.y >= height){
       score ++;
     }
   displayScore();
@@ -100,6 +100,12 @@ function Pipe() {
     fill(255);
     //THIS IS WHERE YOU CHANGE COLOR IF HIT
     if (this.highlight) {
+      bird.y = height-45;
+      bird.lift = 0;
+      bird.gravity = 0;
+      this.speed = 0;
+      pipes = 2
+      displayScore();
       fill(255, 0, 0);
     }
     // rect(this.x, 0, this.w, this.top);
@@ -164,6 +170,6 @@ function Bird() {
 //SCORE
 
 function displayScore(){
-  fill(0)
+  fill(95)
   text(`score: ${score}`,20,20)
 }
