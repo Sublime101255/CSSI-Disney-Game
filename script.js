@@ -2,12 +2,12 @@
 /* global
  *    HSB, background, color, collideRectRect, colorMode, createCanvas, fill, frameRate, keyCode, height,
  *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
- *    UP_ARROW, textSize,textStyle, loadFont, textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
+ *    UP_ARROW, textSize,textStyle, loadSound, loadFont, textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
  */
 
 var bird;
 var pipes = [];
-let spongebob,fontRegular, house,mickeyMouse, score, sky;
+let spongebob,song, createAudio, fontRegular, house,mickeyMouse, score, sky;
 
 
 //SETUP
@@ -28,6 +28,9 @@ function setup() {
   bird = new Bird();
   pipes.push(new Pipe());
   score = 0
+  
+  song = createAudio("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FMickey%20Mouse%20-%20Steamboat%20Willie%20-%20Whistle.mp3?v=1595529035632")
+song.autoplay(true);
 }
 
 
