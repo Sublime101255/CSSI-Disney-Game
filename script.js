@@ -13,7 +13,7 @@ function setup() {
   createCanvas(640, 480);
   spongebob = loadImage(
     // "https://1.bp.blogspot.com/_OBIL8PqOcIY/SKWa02IeHKI/AAAAAAAAAO8/H4dHrsdw3D8/s200/Walking.png"
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0jIJudQZ8BGiwDkJIbN1rxWPTkZPR63epYqGPddjDkdPar0J1&usqp=CAU"
+"olaf.jpg"  
   );
   bird = new Bird();
   pipes.push(new Pipe());
