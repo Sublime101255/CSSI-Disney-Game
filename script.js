@@ -31,7 +31,7 @@ createCanvas(1500, 600);
   );
   
   house = loadImage (
-  "https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2F5887c630bc2fc2ef3a186052.png?v=1595534350161"
+  "https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2F5ca394df1cf23004f283682e.png?v=1595534970451"
   );
   bird = new Bird();
   pipes.push(new Pipe());
@@ -119,12 +119,12 @@ function Pipe() {
       // bird.lift = 0;
       // bird.gravity = 0;
       // this.speed = 0;
-      // pipes = 2
+      // pipes = 4
       fill(255, 0, 0);
     }
     // rect(this.x, 0, this.w, this.top);
     // rect(this.x, height - this.bottom, this.w, this.bottom);
-    image(house,this.w, 0, this.x, this.top);
+    image(house,this.x, 0, this.w, this.top);
     image(house,this.x, height - this.bottom, this.w, this.bottom);
   };
 
