@@ -7,7 +7,7 @@
 
 var bird;
 var pipes = [];
-let spongebob,house,mickeyMouse, sky;
+let spongebob,house,mickeyMouse, score, sky;
 
 
 //SETUP
@@ -27,6 +27,7 @@ function setup() {
   );
   bird = new Bird();
   pipes.push(new Pipe());
+  score = 0
 }
 
 
@@ -55,6 +56,10 @@ function draw() {
   if (frameCount % 75 == 0) {
     pipes.push(new Pipe());
   }
+   if (bird.y <    = 0){
+      score ++;
+    }
+  displayScore();
 }
 
 
@@ -67,6 +72,9 @@ function keyPressed() {
   }
 }
 
+
+
+//PIPE
 function Pipe() {
   this.spacing = 175;
   this.top = random(height / 6, (3 / 4) * height);
@@ -113,6 +121,10 @@ function Pipe() {
   };
 }
 
+
+
+//MICKEY
+
 function Bird() {
   this.y = height / 2;
   this.x = 64;
@@ -145,5 +157,13 @@ function Bird() {
       this.y = 0;
       this.velocity = 0;
     }
+
   };
+}
+
+//SCORE
+
+function displayScore(){
+  fill(0)
+  text(`score: ${score}`,20,20)
 }
