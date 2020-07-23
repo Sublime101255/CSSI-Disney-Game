@@ -2,14 +2,19 @@
 /* global
  *    HSB, background, color, collideRectRect, colorMode, createCanvas, fill, frameRate, keyCode, height,
  *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
- *    UP_ARROW, square, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
+ *    UP_ARROW, square, image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
  */
 
 var bird;
 var pipes = [];
+let spongebob;
 
 function setup() {
   createCanvas(640, 480);
+  spongebob = loadImage(
+    // "https://1.bp.blogspot.com/_OBIL8PqOcIY/SKWa02IeHKI/AAAAAAAAAO8/H4dHrsdw3D8/s200/Walking.png"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0jIJudQZ8BGiwDkJIbN1rxWPTkZPR63epYqGPddjDkdPar0J1&usqp=CAU"
+  );
   bird = new Bird();
   pipes.push(new Pipe());
 }
@@ -98,7 +103,8 @@ function Bird() {
 
   this.show = function() {
     fill(255);
-    ellipse(this.x, this.y, 32, 32);
+    // ellipse(this.x, this.y, 32, 32);
+    image(spongebob, this.x, this.y, 45, 45)
   };
 
   this.up = function() {
