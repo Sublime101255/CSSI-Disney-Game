@@ -29,11 +29,7 @@ function setup() {
   pipes.push(new Pipe());
   score = 0
 }
-function displayScore(){
-  fill(255,0,0)
-  text(`score: ${score}`,20,20)
-  
-}
+
 
 //DRAW
 
@@ -174,8 +170,9 @@ function Bird() {
 
 //SCORE
  
-// function displayScore(){
-//   fill(255,0,0)
-//   text(`score: ${score}`,20,20)
-  
-// }
+function displayScore(){
+  fill(255,0,0)
+  textSize(30);
+  textFont("san-serif")
+  text(`score: ${score}`,20,40)
+}
