@@ -7,14 +7,14 @@
 
 var bird;
 var pipes = [];
-let spongebob,song, gameIsOver, mySound, createAudio, fontRegular, house,mickeyMouse, score, sky;
+let song, gameIsOver,gameOverSound, mySound, createAudio, fontRegular, house,mickeyMouse, score, sky;
 
 function preload() {
   // fontRegular = loadFont('assets/waltograph42.otf');
   fontRegular = loadFont("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2Fwaltograph42.otf?v=1595527371109");
     soundFormats('mp3','ogg');
   mySound = loadSound("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FThere%20s%20a%20Great%20Big%20Beautiful%20Tomorrow.mp3?v=1595532779031");
-  
+  // gameOverSound = loadSound("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FMickey%20Mouse%20-%20Steamboat%20Willie%20-%20Whistle.mp3?v=1595529035632")
 }
 
 //SETUP
@@ -70,9 +70,9 @@ function draw() {
   if (frameCount % 75 == 0) {
     pipes.push(new Pipe());
   }
-   if (bird.y >= height){
-      score ++;
-    }
+   // if (bird.y >= height){
+   //    score ++;
+   //  }
   // if (gameIsOver){
   //   textSize(70);
   //   text ("GAME OVER", width/3+20, height/2)
@@ -120,6 +120,8 @@ function Pipe() {
     fill(255);
     //THIS IS WHERE YOU CHANGE COLOR IF HIT
     if (this.highlight) {
+        // gameOverSound.play();
+      // mySound.play() = false;
       // gameIsOver = true;
       // mySound.play();
       // bird.y = height-45;
@@ -131,10 +133,10 @@ function Pipe() {
     }
     // rect(this.x, 0, this.w, this.top);
     // rect(this.x, height - this.bottom, this.w, this.bottom);
-   var tih = image(house,this.x, 0, this.w, this.top);
-  var bih = image(house,this.x, height - this.bottom, this.w, this.bottom);
+  image(house,this.x, 0, this.w, this.top);
+  image(house,this.x, height - this.bottom, this.w, this.bottom);
     
-    if (bird.y > this.top && bird.y < this.bottom && bird.x >= this.x && bird.x <= this.w){
+    if (bird.y > this.top && bird.y < this.bottom && bird.x > this.x && bird.x < this.w){
       score++
     }
   };
