@@ -2,7 +2,7 @@
 /* global
  *    HSB, background, color, collideRectRect, colorMode, createCanvas, fill, frameRate, keyCode, height,
  *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
- *    UP_ARROW, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
+ *    UP_ARROW, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
  */
 
 var bird;
@@ -29,13 +29,18 @@ function setup() {
   pipes.push(new Pipe());
   score = 0
 }
-
+function displayScore(){
+  fill(255,0,0)
+  text(`score: ${score}`,20,20)
+  
+}
 
 //DRAW
 
 function draw() {
   background(0);
   image (sky,0,0,width,height)
+  displayScore(); 
 
   for (var i = pipes.length - 1; i >= 0; i--) {
     pipes[i].show();
@@ -59,7 +64,7 @@ function draw() {
    if (bird.y >= height){
       score ++;
     }
-  displayScore();
+  
 }
 
 
@@ -100,12 +105,12 @@ function Pipe() {
     fill(255);
     //THIS IS WHERE YOU CHANGE COLOR IF HIT
     if (this.highlight) {
+      displayScore();
       bird.y = height-45;
       bird.lift = 0;
       bird.gravity = 0;
       this.speed = 0;
       pipes = 2
-      displayScore();
       fill(255, 0, 0);
     }
     // rect(this.x, 0, this.w, this.top);
@@ -168,8 +173,9 @@ function Bird() {
 }
 
 //SCORE
-
-function displayScore(){
-  fill(95)
-  text(`score: ${score}`,20,20)
-}
+ 
+// function displayScore(){
+//   fill(255,0,0)
+//   text(`score: ${score}`,20,20)
+  
+// }
