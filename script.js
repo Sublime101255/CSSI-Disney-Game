@@ -72,7 +72,12 @@ function draw() {
    if (bird.y >= height){
       score ++;
     }
-  
+  // if (gameIsOver){
+  //   textSize(70);
+  //   text ("GAME OVER", width/3+20, height/2)
+  //   textSize(60);
+  //   text(`score: ${score}`, width/3+110, height/2 + 40)
+  // }
   // mySound.play();
 }
 
@@ -114,13 +119,13 @@ function Pipe() {
     fill(255);
     //THIS IS WHERE YOU CHANGE COLOR IF HIT
     if (this.highlight) {
-      gameIsOver = true;
+      // gameIsOver = true;
       // mySound.play();
-      bird.y = height-45;
-      bird.lift = 0;
-      bird.gravity = 0;
-      this.speed = 0;
-      pipes = 4
+      // bird.y = height-45;
+      // bird.lift = 0;
+      // bird.gravity = 0;
+      // this.speed = 0;
+      gameIsOver = true;
       fill(255, 0, 0);
     }
     // rect(this.x, 0, this.w, this.top);
@@ -191,9 +196,15 @@ function displayScore(){
   text(`score: ${score}`,20,40)
   if (gameIsOver){
     textSize(70);
-    text ("GAME OVER", width/2, height/2)
+    text ("GAME OVER", width/3+20, height/2)
     textSize(60);
-    text(`score: ${score}`, width/2, height/2 + 40)
+    text(`score: ${score}`, width/3+110, height/2 + 40)
+    // gameIsOver = true;
+      // mySound.play();
+      bird.y = height-45;
+      bird.lift = 0;
+      bird.gravity = 0;
+      this.speed = 0;
   }
 }
 
