@@ -2,7 +2,7 @@
 /* global
  *    HSB, background, color, collideRectRect, colorMode, createCanvas, fill, frameRate, keyCode, height,
  *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
- *    UP_ARROW, square, image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
+ *    UP_ARROW, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
  */
 
 var bird;
@@ -28,6 +28,7 @@ function setup() {
 
 function draw() {
   background(0);
+  image (sky,0,0,width,height)
 
   for (var i = pipes.length - 1; i >= 0; i--) {
     pipes[i].show();
