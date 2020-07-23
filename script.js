@@ -7,16 +7,16 @@
 
 var bird;
 var pipes = [];
-let spongebob,house, sky;
+let spongebob,house,mickeyMouse, sky;
 
 function setup() {
-  createCanvas(640, 480);
-  spongebob = loadImage(
+  createCanvas(800, 600);
+  mickeyMouse = loadImage(
     // "https://1.bp.blogspot.com/_OBIL8PqOcIY/SKWa02IeHKI/AAAAAAAAAO8/H4dHrsdw3D8/s200/Walking.png"
-"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQyzdHc-5iGrzvMI0_t-VjEQCLBwmgxXV08lA&usqp=CAU"  
+"https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2F580b57fbd9996e24bc43bd2f.png?v=1595522428738"  
   );
   sky = loadImage (
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTaHADyEqjR25xVuWh-uzFUidhKnhXT6PJB0w&usqp=CAU"
+  "https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2Fdisney1.jpg?v=1595522898449"
   );
   
   house = loadImage (
@@ -115,7 +115,7 @@ function Bird() {
   this.show = function() {
     fill(255);
     // ellipse(this.x, this.y, 32, 32);
-    image(spongebob, this.x, this.y, 45, 45)
+    image(mickeyMouse, this.x, this.y, 45, 45)
   };
 
   this.up = function() {
