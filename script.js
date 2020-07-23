@@ -7,13 +7,20 @@
 
 var bird;
 var pipes = [];
-let spongebob;
+let spongebob,house, sky;
 
 function setup() {
   createCanvas(640, 480);
   spongebob = loadImage(
-    // "https://1.bp.blogspot.com/_OBIL8PqOcIY/SKWa02IeHKI/AAAAAAAAAO8/H4dHrsdw3D8/s200/Walking.png"
-"olaf.jpg"  
+    "https://1.bp.blogspot.com/_OBIL8PqOcIY/SKWa02IeHKI/AAAAAAAAAO8/H4dHrsdw3D8/s200/Walking.png"
+// "olaf.jpg"  
+  );
+  sky = loadImage (
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTaHADyEqjR25xVuWh-uzFUidhKnhXT6PJB0w&usqp=CAU"
+  );
+  
+  house = loadImage (
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUneXpZnmYUHpENNV1pPDC3RcAY4-lyvQ3IQ&usqp=CAU"
   );
   bird = new Bird();
   pipes.push(new Pipe());
@@ -73,11 +80,14 @@ function Pipe() {
 
   this.show = function() {
     fill(255);
+    //THIS IS WHERE YOU CHANGE COLOR IF HIT
     if (this.highlight) {
       fill(255, 0, 0);
     }
     rect(this.x, 0, this.w, this.top);
     rect(this.x, height - this.bottom, this.w, this.bottom);
+    // image(sky,this.x, 0, this.w, this.top);
+    // image(sky,this.x, height - this.bottom, this.w, this.bottom);
   };
 
   this.update = function() {
