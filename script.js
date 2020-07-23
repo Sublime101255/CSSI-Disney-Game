@@ -20,8 +20,8 @@ function preload() {
 //SETUP
 
 function setup() {
-let cnv = createCanvas(1500, 600);
-  cnv.mousePressed(canvasPressed);
+createCanvas(1500, 600);
+  // cnv.mousePressed(canvasPressed);
   mickeyMouse = loadImage(
     // "https://1.bp.blogspot.com/_OBIL8PqOcIY/SKWa02IeHKI/AAAAAAAAAO8/H4dHrsdw3D8/s200/Walking.png"
 "https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2F580b57fbd9996e24bc43bd2f.png?v=1595522428738"  
@@ -31,12 +31,12 @@ let cnv = createCanvas(1500, 600);
   );
   
   house = loadImage (
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUneXpZnmYUHpENNV1pPDC3RcAY4-lyvQ3IQ&usqp=CAU"
+  "https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2F5887c630bc2fc2ef3a186052.png?v=1595534350161"
   );
   bird = new Bird();
   pipes.push(new Pipe());
   score = 0
-  
+  mySound.play();
 //   song = loadSound("https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FMickey%20Mouse%20-%20Steamboat%20Willie%20-%20Whistle.mp3?v=1595529035632")
 // song.autoplay(true);
 }
@@ -124,7 +124,7 @@ function Pipe() {
     }
     // rect(this.x, 0, this.w, this.top);
     // rect(this.x, height - this.bottom, this.w, this.bottom);
-    image(house,this.x, 0, this.w, this.top);
+    image(house,this.w, 0, this.x, this.top);
     image(house,this.x, height - this.bottom, this.w, this.bottom);
   };
 
@@ -191,6 +191,6 @@ function displayScore(){
 }
 
 
-function canvasPressed(){
-  mySound.play();
-}
+// function canvasPressed(){
+//   mySound.play();
+// }
