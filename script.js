@@ -31,7 +31,7 @@ createCanvas(1500, 600);
   );
   
   house = loadImage (
-  "https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2F5ca394df1cf23004f283682e.png?v=1595534970451"
+  "https://cdn.glitch.com/d7c94f98-a88e-4708-85f3-ac8a5a2b52ec%2FClipartKey_691388.png?v=1595551277441"
   );
  
   bird = new Bird();
@@ -197,7 +197,7 @@ function Bird() {
 //SCORE
  
 function displayScore(){
-  fill("yellow")
+  fill("white")
   textSize(30);
   textFont(fontRegular);
   text(`score: ${score}`,20,40)
