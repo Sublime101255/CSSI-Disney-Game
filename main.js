@@ -68,7 +68,7 @@ function draw() {
   bird.show();
 
   if (frameCount % 75 == 0) {
-    churros.push(new Pipe());
+    churros.push(new Churro());
   }
    // if (bird.y >= height){
    //    score ++;
@@ -94,9 +94,6 @@ function keyPressed() {
 
 
 
-
-
-
 //SCORE
  
 function displayScore(){
@@ -114,7 +111,7 @@ function displayScore(){
       bird.y = height-45;
       bird.lift = 0;
       bird.gravity = 0;
-      pipes.speed = 0;
+      churros.speed = 0;
   }
 }
 
