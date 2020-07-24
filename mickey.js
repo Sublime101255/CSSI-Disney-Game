@@ -1,15 +1,3 @@
-// Name any p5.js functions we use in `global` so Glitch can recognize them.
-/* global
- *    HSB, background, color, collideRectRect, colorMode, createCanvas, fill, frameRate, keyCode, height,
- *    loop, noFill, noLoop, noStroke, random, rect, round, stroke, sqrt, text, width
- *    UP_ARROW, soundFormats, textSize,textStyle, loadSound, loadFont, textFont, fontSize, square, backgroundImage,image, loadImage, frameCount, key,println, keyPressed, DOWN_ARROW, LEFT_ARROW, ellipse, RIGHT_ARROW
- */
-
-// var bird;
-// var pipes = [];
-let spongebob,song, mySound, createAudio, fontRegular, house,mickeyMouse, score, sky;
-
-
 function Bird() {
   this.y = height / 2;
   this.x = 64;
